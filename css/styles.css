@@ -4,6 +4,39 @@
     box-sizing:border-box;
 }
 
+:root{
+    --dark-blue:#1A2E38;
+    --bright-blue:#03B1F4;
+    --light-gray:#E4EAEA;
+}
+
+html, body{
+    height:100%;
+}
+
 body{
     font-family: Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+}
+
+header{
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.navbar-brand{
+    font-weight:600;
+}
+
+main{
+    flex:1;
+    min-height:70vh;
+    padding:60px 0;
+}
+
+footer{
+    background:var(--dark-blue);
+    color:white;
+    text-align:center;
+    padding:30px;
 }
