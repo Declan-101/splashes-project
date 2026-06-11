@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Splashes</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Splashes</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="contact-hero">
+        <div class="container text-center">
+            <img src="images/icon-buttons/swimming-pool.svg" alt="Swimming Pool" class="contact-hero-icon">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="container contact-section">
+        <div class="row">
+
+            <div class="col-lg-5 contact-info">
+                <h2>Get In Touch</h2>
+                <p>Have a question about lessons, programs, parties, or registration? Send us a message and we’ll get back to you.</p>
+
+                <div class="contact-icons">
+                    <div>
+                        <img src="images/icon-buttons/question.svg" alt="Questions">
+                        <p>Questions</p>
+                    </div>
+
+                    <div>
+                        <img src="images/icon-buttons/suggestion.svg" alt="Suggestions">
+                        <p>Suggestions</p>
+                    </div>
+
+                    <div>
+                        <img src="images/icon-buttons/compliment.svg" alt="Compliments">
+                        <p>Compliments</p>
+                    </div>
+
+                    <div>
+                        <img src="images/icon-buttons/concern.svg" alt="Concerns">
+                        <p>Concerns</p>
+                    </div>
+                    <div>
+                        <img src="images/icon-buttons/form.svg" alt="Forms">
+                        <p>Forms</p>
+                    </div>
+                    <div>
+                        <img src="images/icon-buttons/party-coordinator-form.svg" alt="Party Coordinator">
+                        <p>Party Coordinator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <form class="contact-form">
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason for Contact</label>
+                        <select id="reason" class="form-control">
+                            <option>Question</option>
+                            <option>Suggestion</option>
+                            <option>Compliment</option>
+                            <option>Concern</option>
+                            <option>Party Coordinator Form</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" rows="6" placeholder="Write your message here"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Message</button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Splashes</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
