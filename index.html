@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splashes</title>
+    <meta name="description" content="Splashes Aquatics provides swimming lessons and aquatic programs for children and adults.">
+    <title>Home | Splashes Aquatics</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -15,88 +16,382 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
+
             <a class="navbar-brand" href="index.html">
-                Splashes
+                <img src="images/logo-small.png" alt="Splashes Aquatics" class="site-logo">
             </a>
+
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
-                    data-target="#mainNav">
+                    data-target="#mainNav"
+                    aria-controls="mainNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                <ul class="navbar-nav ml-auto align-items-lg-center">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
+
+                    <li class="nav-item ml-lg-3">
+                        <a class="btn btn-light account-btn" href="contact.html">
+                            Register / Sign In
+                        </a>
+                    </li>
+
                 </ul>
             </div>
+
         </div>
     </nav>
 </header>
 
 <main>
+
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Welcome to Splashes</h1>
-            <p>Swimming lessons for children and adults.</p>
-            <a href="contact.html" class="btn btn-primary">Get Started</a>
+
+            <h1>
+                Learning it the Right Way,<br>
+                Right from the Beginning
+            </h1>
+
+            <p>
+                Professional swimming instruction for children and adults.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="about.html" class="btn btn-light">Learn More</a>
+                <a href="contact.html" class="btn btn-light">Contact Us</a>
+            </div>
+
         </div>
     </section>
-    <section class="container intro">
-        <h2>Learn to Swim with Confidence</h2>
-        <p>Splashes provides safe, fun and professional swimming lessons for all ages and skill levels.</p>
-    </section>
-    <section class="container programs">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="images/which-lesson-is-best.jpeg" alt="Swim Lessons" class="program-img">
-                        <h3>Swim Lessons</h3>
-                        <p>Lessons for children learning water safety and swimming skills.</p>
-                        <a href="swimlessons.html" class="btn btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="images/summer-swim-camps.jpeg" alt="Swim Programs" class="program-img">
-                        <h3>Swim Programs</h3>
-                        <p>Programs designed for different ages and ability levels.</p>
-                        <a href="swimprograms.html" class="btn btn-outline-primary">View Programs</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="images/lap-swimming.jpeg" alt="Adult Programs" class="program-img">
-                        <h3>Adult Programs</h3>
-                        <p>Adult classes for beginners, fitness, and confidence in the water.</p>
-                        <a href="adultprograms.html" class="btn btn-outline-primary">Adult Classes</a>
-                    </div>
+
+    <!-- Banners -->
+    <section class="promo-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-3">
+                    <a href="contact.html" class="promo-link">
+                        <img src="images/ww-site-hiring-banner-resized.png" alt="Splashes Aquatics is hiring" class="promo-image"></a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+
+            <h2>Learn to Swim with Confidence</h2>
+
+            <p>
+                Splashes provides safe, fun and professional swimming lessons
+                for all ages and skill levels.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Program cards -->
+    <section class="programs">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card h-100">
+
+                        <img src="images/which-lesson-is-best.jpeg"
+                             alt="Child participating in swimming lessons"
+                             class="card-img-top program-card-image">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">Swim Lessons</h3>
+
+                            <p class="card-text">
+                                Lessons for children learning water safety
+                                and swimming skills.
+                            </p>
+
+                            <a href="contact.html" class="btn btn-outline-primary">
+                                Learn More
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card h-100">
+
+                        <img src="images/summer-swim-camps.jpeg"
+                             alt="Children participating in swim programs"
+                             class="card-img-top program-card-image">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">Swim Programs</h3>
+
+                            <p class="card-text">
+                                Programs designed for different ages
+                                and ability levels.
+                            </p>
+
+                            <a href="contact.html" class="btn btn-outline-primary">
+                                View Programs
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card h-100">
+
+                        <img src="images/lap-swimming.jpeg"
+                             alt="Adult participating in lap swimming"
+                             class="card-img-top program-card-image">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">Adult Programs</h3>
+
+                            <p class="card-text">
+                                Adult classes for beginners, fitness,
+                                and confidence in the water.
+                            </p>
+
+                            <a href="contact.html" class="btn btn-outline-primary">
+                                Adult Classes
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hands On Teaching -->
+    <section class="teaching-section">
+
+    <div class="teaching-overlay">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="teaching-content">
+
+                        <h2>Hands On Teaching</h2>
+
+                        <p>
+                            Splashes Aquatics provides high-quality swim instruction
+                            and a supportive environment for learning how to swim.
+                        </p>
+
+                        <p>
+                            Our instructors help swimmers develop confidence,
+                            water-safety skills and proper swimming technique.
+                        </p>
+
+                        <h3>Splashes Aquatics Offers:</h3>
+
+                        <ul>
+                            <li>Private Swimming Lessons</li>
+                            <li>Semi-Private Swimming Lessons</li>
+                            <li>Parent & Me Baby Swimming Lessons</li>
+                            <li>Adult Swimming Programs</li>
+                        </ul>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Contact Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Locations -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-5 locations-text">
+
+                    <h2>
+                        Find a Splashes<br>
+                        Swim School Near You
+                    </h2>
+
+                    <h3>Family Swim School Locations</h3>
+
+                    <p>
+                        Splashes Aquatics provides professional swimming
+                        instruction from multiple aquatic centers.
+                    </p>
+
+                    <a href="contact.html" class="btn btn-info">
+                        Ask About Locations
+                    </a>
+
+                </div>
+
+                <div class="col-lg-7">
+                    <img src="images/home-our-locations-map.png"
+                         alt="Map showing Splashes Aquatics locations"
+                         class="img-fluid locations-map">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section class="awards-section">
+        <div class="container">
+
+            <h2>Awards We’ve Won</h2>
+
+            <div class="row justify-content-center awards-grid">
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/bay-area-parent-2019.jpeg"
+                         alt="Bay Area Parent Family Favorite 2019"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/bay-area-parent-gold2020.png"
+                         alt="Bay Area Parent Gold 2020"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/best-colorado-community-media-2021.jpeg"
+                         alt="Best Colorado Community Media 2021"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/best-of-la-kids-winner.jpeg"
+                         alt="Best of LA Kids winner"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/best-of-the-best-2018.jpeg"
+                         alt="Best of the Best 2018"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/colorado-parenting-family-fav2019.jpeg"
+                         alt="Colorado Parenting Family Favorite 2019"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/colorado-parenting-family-fav2020.png"
+                         alt="Colorado Parenting Family Favorite 2020"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/colorado-parenting-family-fav2021.png"
+                         alt="Colorado Parenting Family Favorite 2021"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/gold-daisy-award-finalist-2018.jpeg"
+                         alt="Gold Daisy Award finalist 2018"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/mla-swim-lessons-winner-2020-250x250.png"
+                         alt="Most Loved Swim Lessons winner 2020"
+                         class="award-image">
+                </div>
+
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <img src="images/awards/website-parenting-oc-2019.jpeg"
+                         alt="Parenting OC award 2019"
+                         class="award-image">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
 </main>
 
 <footer>
     <div class="container">
-        <p>&copy; 2026 Splashes</p>
+
+        <img src="images/footer-logo-wave-small.png"
+             alt="Splashes Aquatics"
+             class="footer-logo">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="sponsor-logos">
+
+            <img src="images/sponsors/footer-member-issa-logo.png"
+                 alt="Swim School Association member">
+
+            <img src="images/sponsors/footer-ndpa-logo.png"
+                 alt="National Drowning Prevention Alliance">
+
+            <img src="images/sponsors/footer-stop-drowning-now-logo.png"
+                 alt="Stop Drowning Now">
+
+            <img src="images/sponsors/footer-usssa-logo-2.png"
+                 alt="United States Swim School Association">
+
+        </div>
+
+        <p>&copy; 2026 Splashes Aquatics. All Rights Reserved.</p>
+
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
