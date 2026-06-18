@@ -50,6 +50,12 @@ header{
     background:var(--dark-blue);
 }
 
+.sticky-header{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
 .site-logo{
     width:130px;
     height:auto;
@@ -853,3 +859,123 @@ footer p{
     font-size:18px;
 }
 
+/* Program detail pages */
+
+.program-page-hero{
+    min-height:350px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:90px 20px;
+    color:var(--white);
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+}
+
+.program-page-hero h1{
+    font-size:54px;
+    font-weight:700;
+    text-shadow:0 2px 5px rgba(0,0,0,.4);
+}
+
+.swim-lessons-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
+        url("../images/summer-swim-camps.jpeg");
+}
+
+.swim-programs-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
+        url("../images/which-lesson-is-best.jpeg");
+}
+
+.adult-programs-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
+        url("../images/lap-swimming.jpeg");
+}
+
+.program-info-section{
+    padding:55px 0;
+}
+
+.program-info-section h2{
+    margin-bottom:35px;
+    color:var(--dark-blue);
+    text-align:center;
+    font-size:38px;
+    font-weight:700;
+}
+
+.program-info-section h3{
+    margin-bottom:12px;
+    color:var(--dark-gray);
+    font-family:Arial, sans-serif;
+    font-size:18px;
+    font-weight:700;
+}
+
+.program-info-section p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.program-text-block{
+    max-width:900px;
+    margin:0 auto 34px;
+}
+
+.program-location-list{
+    padding-left:0;
+    list-style:none;
+}
+
+.program-location-list li{
+    margin-bottom:10px;
+}
+
+.program-location-list a{
+    color:var(--bright-blue);
+    text-decoration:underline;
+}
+
+@media only screen and (max-width:767px){
+
+    .program-page-hero{
+        min-height:280px;
+        padding:70px 15px;
+    }
+
+    .program-page-hero h1{
+        font-size:38px;
+    }
+
+    .program-info-section{
+        padding:42px 15px;
+    }
+
+    .program-info-section h2{
+        font-size:32px;
+    }
+}
+
+.locations-map-link{
+    display:block;
+    max-width:100%;
+}
+
+.locations-map{
+    display:block;
+    width:100%;
+    max-width:620px;
+    height:auto;
+    margin:0 auto;
+    transition:transform .3s;
+    cursor:pointer;
+}
+
+.locations-map-link:hover .locations-map{
+    transform:scale(1.02);
+}
