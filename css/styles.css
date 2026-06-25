@@ -1,6 +1,6 @@
 /* =========================================================
    SPLASHES WEBSITE STYLES
-   Main CSS file for all pages
+   Main styling for all pages
 ========================================================= */
 
 
@@ -96,7 +96,6 @@ header,
     justify-content:space-between;
 }
 
-/* Works if your logo is text */
 .site-logo{
     color:var(--white);
     font-size:26px;
@@ -105,7 +104,6 @@ header,
     line-height:1;
 }
 
-/* Works if your logo is an image */
 img.site-logo,
 .site-logo img{
     width:130px;
@@ -113,7 +111,6 @@ img.site-logo,
     display:block;
 }
 
-/* Normal HTML nav */
 .nav-links{
     list-style:none;
     display:flex;
@@ -139,7 +136,6 @@ img.site-logo,
     color:var(--bright-blue);
 }
 
-/* Bootstrap nav support */
 .navbar-dark .navbar-nav .nav-link{
     color:var(--white);
     margin-left:12px;
@@ -711,25 +707,55 @@ button{
     box-shadow:var(--soft-shadow);
 }
 
+.contact-form .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin:0;
+}
+
+.contact-form .form-group{
+    margin-bottom:18px;
+}
+
+.contact-form .form-group.col-md-6{
+    max-width:100%;
+    padding:0;
+}
+
 .contact-form label{
+    display:block;
+    margin-bottom:8px;
     color:var(--dark-blue);
     font-weight:700;
 }
 
 .contact-form .form-control{
-    min-height:46px;
-    border-color:#d7e1e4;
+    width:100%;
+    min-height:48px;
+    padding:12px 14px;
+    border:1px solid #d7e1e4;
+    border-radius:5px;
+    font-size:16px;
 }
 
 .contact-form textarea.form-control{
     min-height:150px;
+    resize:vertical;
 }
 
 .contact-form .btn{
     min-width:170px;
-    padding:10px 22px;
+    padding:11px 24px;
     border-radius:25px;
     font-weight:700;
+}
+
+@media only screen and (max-width:767px){
+    .contact-form .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
 }
 
 
@@ -757,7 +783,10 @@ button{
 }
 
 .program-page-hero p{
+    max-width:720px;
+    margin:14px auto 0;
     color:var(--white);
+    font-size:19px;
 }
 
 .swim-lessons-hero{
@@ -791,10 +820,10 @@ button{
 
 .program-info-section h3{
     margin-bottom:12px;
-    color:var(--dark-gray);
+    color:var(--dark-blue);
     font-family:Arial, sans-serif;
-    font-size:18px;
-    font-weight:700;
+    font-size:20px;
+    font-weight:800;
 }
 
 .program-info-section p{
@@ -804,7 +833,12 @@ button{
 
 .program-text-block{
     max-width:900px;
-    margin:0 auto 34px;
+    margin:0 auto 28px;
+    padding:24px;
+    background:var(--white);
+    border-left:5px solid var(--bright-blue);
+    border-radius:8px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
 }
 
 .program-location-list{
@@ -1005,7 +1039,7 @@ button{
 
 .schedule-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
     gap:22px;
 }
 
@@ -1322,10 +1356,6 @@ footer p{
         padding:18px 0;
     }
 
-    .account-btn{
-        margin-top:10px;
-    }
-
     .hero{
         min-height:460px;
     }
@@ -1369,8 +1399,6 @@ footer p{
 @media only screen and (max-width:767px){
 
     .navbar{
-        flex-direction:column;
-        gap:16px;
         padding:18px 15px;
     }
 
@@ -1381,6 +1409,11 @@ footer p{
 
     .site-logo{
         font-size:24px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+        margin-left:0;
+        padding:8px 0;
     }
 
     .nav-links{
@@ -1522,6 +1555,7 @@ footer p{
         font-size:40px;
     }
 
+    .program-page-hero p,
     .timetable-hero p{
         font-size:17px;
     }
@@ -1532,6 +1566,10 @@ footer p{
 
     .program-info-section h2{
         font-size:32px;
+    }
+
+    .program-text-block{
+        padding:20px;
     }
 
     .schedule-section,
@@ -1546,6 +1584,10 @@ footer p{
 
     .class-legend{
         justify-content:flex-start;
+    }
+
+    .schedule-grid{
+        grid-template-columns:1fr;
     }
 
     .results-bar{

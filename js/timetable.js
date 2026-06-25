@@ -1,5 +1,16 @@
+/* =========================================================
+   TIMETABLE PAGE JAVASCRIPT
+   Handles class filtering, multi-select and email enrolment
+========================================================= */
+
+
+/* =========================================================
+   1. Reusable Class Card Component
+========================================================= */
+
 Vue.component("class-session", {
     props: ["session", "selectedIds"],
+
     template: `
         <article
             class="session-card"
@@ -24,6 +35,11 @@ Vue.component("class-session", {
         </article>
     `
 });
+
+
+/* =========================================================
+   2. Main Timetable Vue App
+========================================================= */
 
 new Vue({
     el: "#timetableApp",

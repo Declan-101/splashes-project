@@ -1,279 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Splashes</title>
+    <title>Contact | Splashes Aquatics</title>
 
+    <!-- Bootstrap and custom styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-<header class="sticky-header">
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
+    <!-- Header / Navigation -->
+    <header class="sticky-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
 
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo-small.png" alt="Splashes Aquatics" class="site-logo">
-            </a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo-small.png" alt="Splashes Aquatics" class="site-logo">
+                </a>
 
-            <button class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#mainNav"
-                    aria-controls="mainNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#mainNav"
+                        aria-controls="mainNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ml-auto align-items-lg-center">
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ml-auto align-items-lg-center">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="swim-lessons.html">Summer Swim Camps</a>
+                        </li>
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="swim-programs.html">Swim Lessons</a>
+                        </li>
 
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adult-programs.html">Adult Programs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="timetable.html">Timetable</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+
             </div>
+        </nav>
+    </header>
 
-        </div>
-    </nav>
-</header>
+    <main>
 
-<main>
-    <section class="contact-hero">
-        <div class="container">
-            <div class="contact-hero-content">
-                <img src="images/icon-buttons/swimming-pool.svg" alt="Swimming Pool" class="contact-hero-icon">
-                <h1>Contact Splashes</h1>
-                <p>Questions about lessons, programs, parties or registration? Send us a message and our team will help you find the right next step</p>
+        <!-- Contact hero -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+
+                    <img
+                        src="images/icon-buttons/swimming-pool.svg"
+                        alt="Swimming pool icon"
+                        class="contact-hero-icon">
+
+                    <h1>Contact Splashes</h1>
+
+                    <p>
+                        Questions about lessons, programs, parties or registration?
+                        Send us a message and our team will help you find the right next step.
+                    </p>
+
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="contact-options">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3 mb-4">
-                    <div class="contact-option">
-                        <img src="images/icon-buttons/question.svg" alt="Questions">
-                        <h2>Questions</h2>
-                        <p>Ask about classes, skill levels or schedules.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3 mb-4">
-                    <div class="contact-option">
-                        <img src="images/icon-buttons/form.svg" alt="Forms">
-                        <h2>Forms</h2>
-                        <p>Get help with registration or account details.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3 mb-4">
-                    <div class="contact-option">
-                        <img src="images/icon-buttons/party-coordinator-form.svg" alt="Party Coordinator">
-                        <h2>Parties</h2>
-                        <p>Reach out about swim parties and events.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3 mb-4">
-                    <div class="contact-option">
-                        <img src="images/icon-buttons/compliment.svg" alt="Compliments">
-                        <h2>Feedback</h2>
-                        <p>Share a compliment, concern or suggestion.</p>
-                    </div>
-                </div>
-            </div>        
-        </div>
-    </section>
-    <section class="contact-section">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col-lg-5 contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Use the form and tell us what you need. The more details you include, the easier it is for Splashes to point you towards the right program.</p>
-                    <div class="contact-detail-list">
-                        <div>
-                            <span>Lessons</span>
-                            <p>Private, semi-private, parent and me, and adult swim options.</p>
-                        </div>
-                        <div>
-                            <span>Locations</span>
-                            <p>Ask which swim school location works best for your family</p>
-                        </div>
-                        <div>
-                            <span>Programs</span>
-                            <p>Help with camps, lap swimming, parties, and registration questions.</p>
+        </section>
+
+        <!-- Contact options -->
+        <section class="contact-options">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="contact-option">
+                            <img src="images/icon-buttons/question.svg" alt="Question icon">
+                            <h2>Questions</h2>
+                            <p>Ask about classes, skill levels or schedules.</p>
                         </div>
                     </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="contact-option">
+                            <img src="images/icon-buttons/form.svg" alt="Form icon">
+                            <h2>Forms</h2>
+                            <p>Get help with registration or account details.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="contact-option">
+                            <img src="images/icon-buttons/party-coordinator-form.svg" alt="Party icon">
+                            <h2>Parties</h2>
+                            <p>Reach out about swim parties and events.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="contact-option">
+                            <img src="images/icon-buttons/compliment.svg" alt="Feedback icon">
+                            <h2>Feedback</h2>
+                            <p>Share a compliment, concern or suggestion.</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-lg-7">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" class="form-control" placeholder="Enter your name">
+            </div>
+        </section>
+
+        <!-- Main contact section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="row align-items-start">
+
+                    <!-- Contact information -->
+                    <div class="col-lg-5 contact-info">
+                        <h2>Get In Touch</h2>
+
+                        <p>
+                            Use the form and tell us what you need. The more details
+                            you include, the easier it is for Splashes to point you
+                            towards the right program.
+                        </p>
+
+                        <div class="contact-detail-list">
+
+                            <div>
+                                <span>Lessons</span>
+                                <p>Private, semi-private, parent and me, and adult swim options.</p>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+
+                            <div>
+                                <span>Locations</span>
+                                <p>Ask which swim school location works best for your family.</p>
                             </div>
+
+                            <div>
+                                <span>Programs</span>
+                                <p>Help with camps, lap swimming, parties and registration questions.</p>
+                            </div>
+
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="reason">Reason for Contact</label>
-                            <select id="reason" class="form-control">
-                                <option>Question</option>
-                                <option>Swim Lessons</option>
-                                <option>Registration</option>
-                                <option>Party Coordinator Form</option>
-                                <option>Suggestion</option>
-                                <option>Compliment</option>
-                                <option>Concern</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" rows="6" placeholder="Write your message here"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit Message</button>
-                    </form>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="col-lg-7">
+                        <form class="contact-form" id="contact-form">
+
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="name">Full Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        class="form-control"
+                                        placeholder="Enter your name">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        class="form-control"
+                                        placeholder="Enter your phone number">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    placeholder="Enter your email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reason">Reason for Contact</label>
+                                <select id="reason" class="form-control">
+                                    <option>Question</option>
+                                    <option>Swim Lessons</option>
+                                    <option>Registration</option>
+                                    <option>Party Coordinator Form</option>
+                                    <option>Suggestion</option>
+                                    <option>Compliment</option>
+                                    <option>Concern</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    class="form-control"
+                                    rows="6"
+                                    placeholder="Write your message here"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Submit Message
+                            </button>
+
+                        </form>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
 
-<!-- Awards -->
-    <section class="awards-section">
+        <!-- Awards section -->
+        <section class="awards-section">
+            <div class="container">
+
+                <h2>Awards We’ve Won</h2>
+
+                <div class="row justify-content-center awards-grid">
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/bay-area-parent-2019.jpeg" alt="Bay Area Parent Family Favorite 2019" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/bay-area-parent-gold2020.png" alt="Bay Area Parent Gold 2020" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/best-colorado-community-media-2021.jpeg" alt="Best Colorado Community Media 2021" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/best-of-la-kids-winner.jpeg" alt="Best of LA Kids winner" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/best-of-the-best-2018.jpeg" alt="Best of the Best 2018" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/colorado-parenting-family-fav2019.jpeg" alt="Colorado Parenting Family Favorite 2019" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/colorado-parenting-family-fav2020.png" alt="Colorado Parenting Family Favorite 2020" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/colorado-parenting-family-fav2021.png" alt="Colorado Parenting Family Favorite 2021" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/gold-daisy-award-finalist-2018.jpeg" alt="Gold Daisy Award finalist 2018" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/mla-swim-lessons-winner-2020-250x250.png" alt="Most Loved Swim Lessons winner 2020" class="award-image">
+                    </div>
+
+                    <div class="col-4 col-sm-3 col-lg-2">
+                        <img src="images/awards/website-parenting-oc-2019.jpeg" alt="Parenting OC award 2019" class="award-image">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
 
-            <h2>Awards We’ve Won</h2>
+            <img
+                src="images/footer-logo-wave-small.png"
+                alt="Splashes Aquatics"
+                class="footer-logo">
 
-            <div class="row justify-content-center awards-grid">
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/bay-area-parent-2019.jpeg"
-                         alt="Bay Area Parent Family Favorite 2019"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/bay-area-parent-gold2020.png"
-                         alt="Bay Area Parent Gold 2020"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/best-colorado-community-media-2021.jpeg"
-                         alt="Best Colorado Community Media 2021"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/best-of-la-kids-winner.jpeg"
-                         alt="Best of LA Kids winner"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/best-of-the-best-2018.jpeg"
-                         alt="Best of the Best 2018"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/colorado-parenting-family-fav2019.jpeg"
-                         alt="Colorado Parenting Family Favorite 2019"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/colorado-parenting-family-fav2020.png"
-                         alt="Colorado Parenting Family Favorite 2020"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/colorado-parenting-family-fav2021.png"
-                         alt="Colorado Parenting Family Favorite 2021"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/gold-daisy-award-finalist-2018.jpeg"
-                         alt="Gold Daisy Award finalist 2018"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/mla-swim-lessons-winner-2020-250x250.png"
-                         alt="Most Loved Swim Lessons winner 2020"
-                         class="award-image">
-                </div>
-
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <img src="images/awards/website-parenting-oc-2019.jpeg"
-                         alt="Parenting OC award 2019"
-                         class="award-image">
-                </div>
-
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="swim-lessons.html">Summer Swim Camps</a>
+                <a href="swim-programs.html">Swim Lessons</a>
+                <a href="adult-programs.html">Adult Programs</a>
+                <a href="timetable.html">Timetable</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </div>
 
-        </div>
-    </section>
+            <div class="sponsor-logos">
+                <img src="images/sponsors/footer-member-issa-logo.png" alt="Swim School Association member">
+                <img src="images/sponsors/footer-ndpa-logo.png" alt="National Drowning Prevention Alliance">
+                <img src="images/sponsors/footer-stop-drowning-now-logo.png" alt="Stop Drowning Now">
+                <img src="images/sponsors/footer-usssa-logo-2.png" alt="United States Swim School Association">
+            </div>
 
-</main>
-
-<footer>
-    <div class="container">
-
-        <img src="images/footer-logo-wave-small.png"
-             alt="Splashes Aquatics"
-             class="footer-logo">
-
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <div class="sponsor-logos">
-
-            <img src="images/sponsors/footer-member-issa-logo.png"
-                 alt="Swim School Association member">
-
-            <img src="images/sponsors/footer-ndpa-logo.png"
-                 alt="National Drowning Prevention Alliance">
-
-            <img src="images/sponsors/footer-stop-drowning-now-logo.png"
-                 alt="Stop Drowning Now">
-
-            <img src="images/sponsors/footer-usssa-logo-2.png"
-                 alt="United States Swim School Association">
+            <p>&copy; 2026 Splashes Aquatics. All Rights Reserved.</p>
 
         </div>
+    </footer>
 
-        <p>&copy; 2026 Splashes Aquatics. All Rights Reserved.</p>
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
