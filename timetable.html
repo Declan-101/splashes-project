@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable | Splashes</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/timetable.js" defer></script>
+</head>
+
+<body>
+    <header class="sticky-header">
+        <nav class="navbar">
+            <a href="index.html" class="site-logo">Splashes</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="swim-lessons.html">Swim Lessons</a></li>
+                <li><a href="swim-programs.html">Swim Programs</a></li>
+                <li><a href="adult-programs.html">Adult Programs</a></li>
+                <li><a href="timetable.html" class="active">Timetable</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="timetableApp">
+        <section class="program-page-hero timetable-hero">
+            <div class="program-hero-content">
+                <h1>Class Timetable</h1>
+                <p>Choose the swimming class that works best for your schedule.</p>
+            </div>
+        </section>
+
+        <section class="schedule-section">
+            <div class="container">
+                <div class="schedule-heading">
+                    <span class="section-label">Weekly Schedule</span>
+                    <h2>Choose Your Class</h2>
+                    <p class="schedule-intro">
+                        Browse the weekly timetable, filter by day or time, then select one or more classes to request enrolment.
+                    </p>
+                </div>
+
+                <div class="class-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot type-learn"></span>
+                        Kids Lessons
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-dot type-parent"></span>
+                        Parent Class
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-dot type-stroke"></span>
+                        Skill Class
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-dot type-adult"></span>
+                        Adult Program
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-dot type-lap"></span>
+                        Fitness Swim
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-dot type-camp"></span>
+                        Swim Camp
+                    </div>
+                </div>
+
+                <div class="schedule-filters">
+                    <div class="filter-group">
+                        <label>Choose Day</label>
+
+                        <div class="filter-buttons">
+                            <button
+                                v-for="day in days"
+                                :key="day"
+                                type="button"
+                                class="filter-button"
+                                :class="{ active: selectedDay === day }"
+                                @click="setDay(day)"
+                            >
+                                {{ day }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="timeFilter">Choose Time</label>
+
+                        <select id="timeFilter" class="time-filter" v-model="selectedTime">
+                            <option v-for="time in timeOptions" :key="time" :value="time">
+                                {{ time }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-bar">
+                    <p>
+                        Showing {{ filteredSessions.length }} class<span v-if="filteredSessions.length !== 1">es</span>
+                    </p>
+
+                    <button type="button" class="clear-button" @click="clearFilters">
+                        Clear Filters
+                    </button>
+                </div>
+
+                <div class="schedule-grid" v-if="filteredSessions.length">
+                    <class-session
+                        v-for="session in filteredSessions"
+                        :key="session.id"
+                        :session="session"
+                        :selected-ids="selectedSessionIds"
+                        @select-session="toggleSession">
+                    </class-session>
+                </div>
+
+                <div class="no-results" v-else>
+                    <h3>No classes found</h3>
+                    <p>Try another day or time option.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="enrolment-section">
+            <div class="container enrolment-layout">
+                <div class="enrolment-copy">
+                    <span class="section-label">Enrolment Request</span>
+                    <h2>Ready To Join?</h2>
+                    <p>
+                        Select one or more classes from the timetable, fill out your details, and send an email request to enrol.
+                    </p>
+
+                    <div class="selected-session" v-if="selectedSessions.length">
+                        <p class="selected-label">Selected Classes</p>
+
+                        <div class="selected-class-row" v-for="session in selectedSessions" :key="session.id">
+                            <strong>{{ session.title }}</strong>
+                            <span>{{ session.day }} | {{ session.time }} | {{ session.location }}</span>
+                            <button type="button" @click="toggleSession(session.id)">Remove</button>
+                        </div>
+                    </div>
+
+                    <div class="empty-selection" v-else>
+                        Select one or more classes from the timetable.
+                    </div>
+                </div>
+
+                <form class="enrolment-form" @submit.prevent="sendEmail">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">Student Name</label>
+                            <input
+                                id="studentName"
+                                type="text"
+                                v-model="studentName"
+                                placeholder="Enter student name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parentName">Parent/Guardian Name</label>
+                            <input
+                                id="parentName"
+                                type="text"
+                                v-model="parentName"
+                                placeholder="Enter parent name"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                id="email"
+                                type="email"
+                                v-model="email"
+                                placeholder="Enter email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                id="phone"
+                                type="tel"
+                                v-model="phone"
+                                placeholder="Enter phone number"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Extra Message</label>
+                        <textarea
+                            id="message"
+                            rows="6"
+                            v-model="message"
+                            placeholder="Tell us anything else we should know"
+                        ></textarea>
+                    </div>
+
+                    <p class="form-error" v-if="formError">{{ formError }}</p>
+
+                    <button class="enrol-button" type="submit">
+                        Send Enrolment Email
+                    </button>
+
+                    <p class="email-note">
+                        This will open your email app with the selected class details already filled in.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="swim-lessons.html">Swim Lessons</a>
+            <a href="swim-programs.html">Swim Programs</a>
+            <a href="adult-programs.html">Adult Programs</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p>&copy; 2026 Splashes. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

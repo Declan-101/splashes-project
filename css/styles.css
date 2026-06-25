@@ -1,3 +1,13 @@
+/* =========================================================
+   SPLASHES WEBSITE STYLES
+   Main CSS file for all pages
+========================================================= */
+
+
+/* =========================================================
+   1. Reset And Global Settings
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -7,9 +17,11 @@
 :root{
     --white:#ffffff;
     --light-gray:#e4eaea;
+    --page-blue:#eef8fb;
     --dark-blue:#1a2e38;
     --dark-gray:#444444;
     --bright-blue:#03b1f4;
+    --soft-shadow:0 8px 24px rgba(0,0,0,.09);
 }
 
 html,
@@ -33,42 +45,110 @@ h1,
 h2,
 h3{
     font-family:Georgia, serif;
+    color:var(--dark-blue);
+}
+
+p{
+    line-height:1.65;
+}
+
+a{
+    color:inherit;
 }
 
 a:hover{
     text-decoration:none;
 }
 
-/* Header */
+img{
+    max-width:100%;
+}
 
-header{
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+
+/* =========================================================
+   2. Header And Navigation
+========================================================= */
+
+header,
+.sticky-header{
+    position:sticky;
+    top:0;
+    z-index:9999;
     background:var(--dark-blue);
 }
 
 .navbar{
-    min-height:72px;
+    min-height:78px;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
     background:var(--dark-blue);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.sticky-header{
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-}
-
+/* Works if your logo is text */
 .site-logo{
+    color:var(--white);
+    font-size:26px;
+    font-weight:800;
+    text-decoration:none;
+    line-height:1;
+}
+
+/* Works if your logo is an image */
+img.site-logo,
+.site-logo img{
     width:130px;
     height:auto;
+    display:block;
 }
 
+/* Normal HTML nav */
+.nav-links{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:26px;
+    margin:0;
+    padding:0;
+}
+
+.nav-links li{
+    margin:0;
+}
+
+.nav-links a{
+    color:var(--white);
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--bright-blue);
+}
+
+/* Bootstrap nav support */
 .navbar-dark .navbar-nav .nav-link{
     color:var(--white);
     margin-left:12px;
-    font-weight:600;
+    font-weight:700;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .active > .nav-link{
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active{
     color:var(--bright-blue);
 }
 
@@ -76,150 +156,20 @@ header{
     padding:8px 18px;
     border-radius:25px;
     color:var(--dark-blue);
+    background:var(--white);
     font-size:13px;
     font-weight:700;
 }
 
-/* Hero */
 
-.hero{
-    min-height:500px;
-    display:flex;
-    align-items:center;
-    padding:70px 20px;
-    color:var(--white);
-    text-align:center;
+/* =========================================================
+   3. Buttons
+========================================================= */
 
-    background-image:
-        linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)),
-        url("../images/home.jpeg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+.btn,
+button{
+    font-family:Arial, sans-serif;
 }
-
-.hero h1{
-    max-width:760px;
-    margin:0 auto;
-    font-size:54px;
-    line-height:1.15;
-    font-weight:700;
-    text-shadow:0 2px 5px rgba(0,0,0,.4);
-}
-
-.hero p{
-    margin:22px 0;
-    font-size:19px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.hero-buttons .btn{
-    min-width:160px;
-    padding:10px 24px;
-    border-radius:25px;
-    font-weight:600;
-}
-
-/* Promotional banners */
-
-.promo-section{
-    padding:30px 0 10px;
-}
-
-.promo-link{
-    display:block;
-    width:100%;
-    height:100%;
-}
-
-.promo-image{
-    display:block;
-    width:100%;
-    height:125px;
-    object-fit:cover;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-}
-
-/* Intro */
-
-.intro{
-    padding:35px 15px 15px;
-    text-align:center;
-}
-
-.intro h2{
-    margin-bottom:12px;
-    color:var(--dark-blue);
-    font-size:42px;
-    font-weight:700;
-}
-
-.intro p{
-    max-width:760px;
-    margin:0 auto;
-    font-size:17px;
-}
-
-/* Program cards */
-
-.programs{
-    padding:25px 0 45px;
-}
-
-.program-card{
-    overflow:hidden;
-    border:1px solid var(--light-gray);
-    border-radius:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
-    transition:transform .3s, box-shadow .3s;
-}
-
-.program-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,.13);
-}
-
-.program-card-image{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-}
-
-.program-card .card-body{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:22px 18px;
-    text-align:center;
-}
-
-.program-card .card-title{
-    margin-bottom:12px;
-    color:var(--dark-blue);
-    font-size:23px;
-    font-weight:700;
-}
-
-.program-card .card-text{
-    flex:1;
-    font-size:15px;
-    line-height:1.55;
-}
-
-.program-card .btn{
-    width:160px;
-    margin-top:auto;
-}
-
-/* Buttons */
 
 .btn-primary{
     background:var(--dark-blue);
@@ -239,6 +189,7 @@ header{
 .btn-outline-primary:hover{
     background:var(--bright-blue);
     border-color:var(--bright-blue);
+    color:var(--white);
 }
 
 .btn-info{
@@ -246,87 +197,249 @@ header{
     border-color:var(--bright-blue);
 }
 
-/* Teaching section */
+
+/* =========================================================
+   4. Home Page Hero
+========================================================= */
+
+.hero{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    padding:70px 20px;
+    color:var(--white);
+    text-align:center;
+    background-image:
+        linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.32)),
+        url("../images/home.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero h1{
+    max-width:780px;
+    margin:0 auto;
+    color:var(--white);
+    font-size:54px;
+    line-height:1.15;
+    font-weight:700;
+    text-shadow:0 2px 5px rgba(0,0,0,.4);
+}
+
+.hero p{
+    margin:22px 0;
+    color:var(--white);
+    font-size:19px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.hero-buttons .btn{
+    min-width:160px;
+    padding:10px 24px;
+    border-radius:25px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   5. Promotional Banner
+========================================================= */
+
+.promo-section{
+    padding:30px 0 10px;
+}
+
+.promo-link{
+    display:block;
+}
+
+.promo-image{
+    display:block;
+    width:100%;
+    height:125px;
+    object-fit:cover;
+    border-radius:8px;
+    box-shadow:var(--soft-shadow);
+}
+
+
+/* =========================================================
+   6. Home Intro Section
+========================================================= */
+
+.intro{
+    padding:45px 15px 20px;
+    text-align:center;
+}
+
+.intro h2{
+    margin-bottom:12px;
+    font-size:46px;
+    font-weight:700;
+}
+
+.intro p{
+    max-width:780px;
+    margin:0 auto;
+    font-size:18px;
+}
+
+
+/* =========================================================
+   7. Program Cards On Home Page
+========================================================= */
+
+.programs{
+    padding:30px 0 55px;
+}
+
+.program-card{
+    height:100%;
+    overflow:hidden;
+    border:1px solid var(--light-gray);
+    border-radius:10px;
+    background:var(--white);
+    box-shadow:var(--soft-shadow);
+    transition:transform .25s, box-shadow .25s;
+}
+
+.program-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,.13);
+}
+
+.program-card-image{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.program-card .card-body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:26px 20px;
+    text-align:center;
+}
+
+.program-card .card-title{
+    margin-bottom:12px;
+    font-size:28px;
+    font-weight:700;
+}
+
+.program-card .card-text{
+    flex:1;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.program-card .btn{
+    width:170px;
+    margin-top:12px;
+    border-radius:5px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   8. Hands On Teaching Section
+========================================================= */
 
 .teaching-section{
-    padding:50px 0;
-    background:#eef7fa;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background-image:
+        linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
+        url("../images/home-hands-on-teaching.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
-.teaching-section .row{
-    align-items:stretch;
-}
-
-.teaching-box{
+.teaching-overlay{
     width:100%;
-    height:100%;
-    padding:34px;
-    background:var(--white);
+    padding:80px 0;
+}
+
+.teaching-content,
+.teaching-box{
+    max-width:540px;
+    padding:40px;
+    background:rgba(255,255,255,.92);
     border:1px solid var(--light-gray);
-    border-radius:14px;
-    box-shadow:0 5px 18px rgba(0,0,0,.10);
+    border-radius:12px;
+    box-shadow:var(--soft-shadow);
 }
 
+.teaching-content h2,
 .teaching-box h2{
-    margin-bottom:18px;
-    color:var(--dark-blue);
-    font-size:40px;
+    font-size:44px;
     font-weight:700;
+    margin-bottom:20px;
 }
 
+.teaching-content h3,
 .teaching-box h3{
-    margin-top:20px;
-    margin-bottom:12px;
-    color:var(--dark-blue);
-    font-size:22px;
+    margin-top:24px;
+    margin-bottom:14px;
+    font-size:25px;
     font-weight:700;
 }
 
+.teaching-content p,
 .teaching-box p,
 .teaching-box li{
-    font-size:16px;
-    line-height:1.65;
+    font-size:17px;
+    line-height:1.75;
 }
 
+.teaching-content ul,
 .teaching-box ul{
-    margin-bottom:22px;
     padding-left:20px;
+    margin-bottom:25px;
 }
 
+.teaching-content li,
 .teaching-box li{
-    margin-bottom:9px;
-}
-
-.teaching-box .badge{
-    margin-left:6px;
+    margin-bottom:10px;
 }
 
 .teaching-image{
     width:100%;
-    height:100%;
     min-height:470px;
     object-fit:cover;
-    border-radius:14px;
-    box-shadow:0 5px 18px rgba(0,0,0,.10);
+    border-radius:12px;
+    box-shadow:var(--soft-shadow);
 }
 
-/* Locations */
+
+/* =========================================================
+   9. Locations Section
+========================================================= */
 
 .locations-section{
-    padding:60px 0;
+    padding:70px 0;
     color:var(--white);
-
     background-image:
         linear-gradient(rgba(26,46,56,.88), rgba(26,46,56,.88)),
         url("../images/home-our-locations-bg.jpeg");
-
     background-size:cover;
     background-position:center;
 }
 
 .locations-text h2{
     margin-bottom:18px;
-    font-size:44px;
+    color:var(--white);
+    font-size:46px;
     line-height:1.1;
     font-weight:700;
 }
@@ -339,24 +452,42 @@ header{
 
 .locations-text p{
     margin-bottom:20px;
+    color:var(--white);
     font-size:16px;
-    line-height:1.65;
+    line-height:1.75;
+}
+
+.locations-map-link{
+    display:block;
+    max-width:100%;
 }
 
 .locations-map{
+    display:block;
     width:100%;
+    max-width:620px;
+    height:auto;
+    margin:0 auto;
+    cursor:pointer;
+    transition:transform .25s;
 }
 
-/* Awards */
+.locations-map-link:hover .locations-map{
+    transform:scale(1.02);
+}
+
+
+/* =========================================================
+   10. Awards Section
+========================================================= */
 
 .awards-section{
-    padding:45px 0;
+    padding:50px 0;
     text-align:center;
 }
 
 .awards-section h2{
-    margin-bottom:28px;
-    color:var(--dark-blue);
+    margin-bottom:30px;
     font-size:42px;
     font-weight:700;
 }
@@ -375,61 +506,90 @@ header{
     object-fit:contain;
 }
 
-/* Footer */
 
-footer{
-    padding:32px 20px 20px;
-    color:var(--dark-blue);
+/* =========================================================
+   11. About Page
+========================================================= */
+
+.about-hero{
+    padding:120px 20px;
+    color:var(--white);
     text-align:center;
-
     background-image:
-        linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
-        url("../images/footer-bg.jpeg");
-
+        linear-gradient(rgba(26,46,56,.45), rgba(26,46,56,.45)),
+        url("../images/about-us-hero.jpeg");
     background-size:cover;
     background-position:center;
 }
 
-.footer-logo{
-    width:150px;
-    margin-bottom:18px;
+.about-hero h1{
+    color:var(--white);
+    font-size:56px;
+    font-weight:700;
+    margin-bottom:15px;
+    text-shadow:0 2px 5px rgba(0,0,0,.35);
 }
 
-.footer-links{
-    display:flex;
-    justify-content:center;
-    gap:25px;
+.about-hero p{
+    color:var(--white);
+    font-size:20px;
+}
+
+.about-content{
+    padding:65px 0;
+}
+
+.about-content h2{
+    font-size:42px;
+    font-weight:700;
     margin-bottom:20px;
 }
 
-.footer-links a{
-    color:var(--dark-blue);
-    font-weight:600;
+.about-content p{
+    font-size:18px;
+    line-height:1.8;
 }
 
-.sponsor-logos{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:22px;
-    margin-bottom:20px;
+.about-image{
+    border-radius:12px;
+    box-shadow:var(--soft-shadow);
 }
 
-.sponsor-logos img{
-    max-width:75px;
-    max-height:50px;
-    object-fit:contain;
+.about-stats{
+    background:var(--page-blue);
+    padding:60px 0;
+    text-align:center;
 }
 
-footer p{
-    margin-bottom:0;
-    font-size:13px;
+.about-stats h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:40px;
 }
 
-/* About page */
+.stat-box{
+    height:100%;
+    background:var(--white);
+    padding:35px;
+    border-radius:10px;
+    box-shadow:var(--soft-shadow);
+}
 
-/* Contact page */
+.stat-box h3{
+    color:var(--bright-blue);
+    font-size:48px;
+    font-weight:700;
+}
+
+.stat-box p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+
+/* =========================================================
+   12. Contact Page
+========================================================= */
 
 .contact-hero{
     min-height:430px;
@@ -437,17 +597,15 @@ footer p{
     align-items:center;
     padding:90px 20px;
     color:var(--white);
-
     background-image:
         linear-gradient(rgba(26,46,56,.62), rgba(26,46,56,.62)),
         url("../images/contact-hero.jpeg");
-
     background-size:cover;
     background-position:center;
 }
 
 .contact-hero-content{
-    max-width:680px;
+    max-width:700px;
 }
 
 .contact-hero-icon{
@@ -461,6 +619,7 @@ footer p{
 
 .contact-hero h1{
     margin-bottom:16px;
+    color:var(--white);
     font-size:52px;
     font-weight:700;
     text-shadow:0 2px 5px rgba(0,0,0,.35);
@@ -469,23 +628,24 @@ footer p{
 .contact-hero p{
     max-width:620px;
     margin-bottom:24px;
+    color:var(--white);
     font-size:19px;
     line-height:1.65;
 }
 
 .contact-options{
-    padding:46px 0 18px;
-    background:#eef7fa;
+    padding:50px 0 25px;
+    background:var(--page-blue);
 }
 
 .contact-option{
     height:100%;
-    padding:26px 20px;
+    padding:28px 20px;
     text-align:center;
     background:var(--white);
     border:1px solid var(--light-gray);
     border-radius:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    box-shadow:var(--soft-shadow);
 }
 
 .contact-option img{
@@ -496,8 +656,7 @@ footer p{
 
 .contact-option h2{
     margin-bottom:10px;
-    color:var(--dark-blue);
-    font-size:24px;
+    font-size:25px;
     font-weight:700;
 }
 
@@ -508,13 +667,12 @@ footer p{
 }
 
 .contact-section{
-    padding:60px 0;
+    padding:65px 0;
 }
 
 .contact-info h2{
     margin-bottom:18px;
-    color:var(--dark-blue);
-    font-size:38px;
+    font-size:40px;
     font-weight:700;
 }
 
@@ -550,12 +708,12 @@ footer p{
     background:var(--white);
     border:1px solid var(--light-gray);
     border-radius:10px;
-    box-shadow:0 4px 18px rgba(0,0,0,.10);
+    box-shadow:var(--soft-shadow);
 }
 
 .contact-form label{
     color:var(--dark-blue);
-    font-weight:600;
+    font-weight:700;
 }
 
 .contact-form .form-control{
@@ -571,12 +729,594 @@ footer p{
     min-width:170px;
     padding:10px 22px;
     border-radius:25px;
-    font-weight:600;
+    font-weight:700;
 }
 
-/* Tablet */
+
+/* =========================================================
+   13. Program Detail Pages
+========================================================= */
+
+.program-page-hero{
+    min-height:350px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:90px 20px;
+    color:var(--white);
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+}
+
+.program-page-hero h1{
+    color:var(--white);
+    font-size:54px;
+    font-weight:700;
+    text-shadow:0 2px 5px rgba(0,0,0,.4);
+}
+
+.program-page-hero p{
+    color:var(--white);
+}
+
+.swim-lessons-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.35), rgba(26,46,56,.35)),
+        url("../images/summer-swim-camps.jpeg");
+}
+
+.swim-programs-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.35), rgba(26,46,56,.35)),
+        url("../images/which-lesson-is-best.jpeg");
+}
+
+.adult-programs-hero{
+    background-image:
+        linear-gradient(rgba(26,46,56,.35), rgba(26,46,56,.35)),
+        url("../images/lap-swimming.jpeg");
+}
+
+.program-info-section{
+    padding:60px 0;
+}
+
+.program-info-section h2{
+    margin-bottom:35px;
+    text-align:center;
+    font-size:38px;
+    font-weight:700;
+}
+
+.program-info-section h3{
+    margin-bottom:12px;
+    color:var(--dark-gray);
+    font-family:Arial, sans-serif;
+    font-size:18px;
+    font-weight:700;
+}
+
+.program-info-section p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.program-text-block{
+    max-width:900px;
+    margin:0 auto 34px;
+}
+
+.program-location-list{
+    padding-left:0;
+    list-style:none;
+}
+
+.program-location-list li{
+    margin-bottom:10px;
+}
+
+.program-location-list a{
+    color:var(--bright-blue);
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   14. Timetable Hero
+========================================================= */
+
+.timetable-hero{
+    min-height:360px;
+    padding:110px 20px;
+    background-image:
+        linear-gradient(rgba(16,42,54,.58), rgba(16,42,54,.58)),
+        url("../images/home.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+.timetable-hero h1{
+    color:var(--white);
+    font-size:58px;
+    margin-bottom:12px;
+}
+
+.timetable-hero p{
+    max-width:650px;
+    margin:0 auto;
+    color:var(--white);
+    font-size:20px;
+}
+
+
+/* =========================================================
+   15. Timetable Schedule Section
+========================================================= */
+
+.schedule-section{
+    background:var(--page-blue);
+    padding:70px 20px;
+}
+
+.schedule-section .container,
+.enrolment-section .container{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.schedule-heading{
+    display:block;
+    max-width:780px;
+    margin:0 auto 35px;
+    text-align:center;
+}
+
+.section-label{
+    display:block;
+    color:var(--bright-blue);
+    font-weight:800;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0;
+    margin-bottom:10px;
+}
+
+.schedule-heading h2,
+.enrolment-copy h2{
+    color:var(--dark-blue);
+    font-size:44px;
+    margin-bottom:14px;
+    line-height:1.15;
+}
+
+.schedule-intro,
+.enrolment-copy p{
+    color:var(--dark-gray);
+    font-size:18px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   16. Timetable Colour Legend
+========================================================= */
+
+.class-legend{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin:0 auto 30px;
+    padding:0;
+    background:transparent;
+    border:0;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--white);
+    padding:10px 14px;
+    border-radius:6px;
+    font-weight:700;
+    color:var(--dark-blue);
+    box-shadow:0 5px 16px rgba(0,0,0,.06);
+}
+
+.legend-dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    display:inline-block;
+    background:var(--class-color);
+}
+
+
+/* =========================================================
+   17. Timetable Filters
+========================================================= */
+
+.schedule-filters{
+    background:var(--white);
+    padding:24px;
+    border-radius:8px;
+    display:grid;
+    grid-template-columns:1fr 220px;
+    gap:24px;
+    align-items:end;
+    margin-bottom:22px;
+    box-shadow:var(--soft-shadow);
+}
+
+.filter-group label{
+    display:block;
+    margin-bottom:10px;
+    color:var(--dark-blue);
+    font-weight:800;
+}
+
+.filter-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.filter-button,
+.clear-button{
+    border:1px solid var(--bright-blue);
+    background:var(--white);
+    color:var(--dark-blue);
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.filter-button:hover,
+.filter-button.active,
+.clear-button:hover{
+    background:var(--bright-blue);
+    color:var(--white);
+}
+
+.time-filter{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #cfdde3;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.results-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:24px;
+    color:var(--dark-blue);
+    font-weight:700;
+}
+
+
+/* =========================================================
+   18. Timetable Class Cards
+========================================================= */
+
+.schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:22px;
+}
+
+.session-card{
+    --class-color:var(--bright-blue);
+    --class-tint:#e7f7ff;
+
+    background:var(--white);
+    border-radius:8px;
+    padding:24px;
+    border-top:6px solid var(--class-color);
+    box-shadow:var(--soft-shadow);
+    display:flex;
+    flex-direction:column;
+    min-height:260px;
+}
+
+.session-card.is-selected{
+    outline:3px solid var(--class-color);
+    background:linear-gradient(180deg, var(--class-tint), var(--white));
+}
+
+.session-topline{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    color:var(--dark-blue);
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.session-card h3{
+    color:var(--dark-blue);
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.class-type{
+    width:fit-content;
+    background:var(--class-tint);
+    color:var(--dark-blue);
+    padding:6px 10px;
+    border-radius:4px;
+    font-weight:800;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.session-details{
+    color:var(--dark-gray);
+    font-weight:600;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.session-select{
+    margin-top:auto;
+    width:100%;
+    border:2px solid var(--class-color);
+    background:var(--white);
+    color:var(--dark-blue);
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.session-select:hover,
+.session-card.is-selected .session-select{
+    background:var(--class-color);
+    color:var(--white);
+}
+
+.type-learn{
+    --class-color:#32a9e0;
+    --class-tint:#dff3fc;
+}
+
+.type-parent{
+    --class-color:#24b39a;
+    --class-tint:#dcf5f0;
+}
+
+.type-stroke{
+    --class-color:#f07b65;
+    --class-tint:#fde8e3;
+}
+
+.type-adult{
+    --class-color:#9b75c9;
+    --class-tint:#eee6f7;
+}
+
+.type-lap{
+    --class-color:#75a843;
+    --class-tint:#e9f2df;
+}
+
+.type-camp{
+    --class-color:#e2aa22;
+    --class-tint:#fbf0d4;
+}
+
+.no-results{
+    background:var(--white);
+    padding:40px;
+    text-align:center;
+    border-radius:8px;
+    color:var(--dark-blue);
+}
+
+
+/* =========================================================
+   19. Timetable Enrolment Section
+========================================================= */
+
+.enrolment-section{
+    background:var(--white);
+    padding:75px 20px;
+}
+
+.enrolment-layout{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:55px;
+    align-items:start;
+}
+
+.selected-session,
+.empty-selection{
+    margin-top:24px;
+    background:#f4fbff;
+    border-left:5px solid var(--bright-blue);
+    padding:18px;
+    border-radius:6px;
+    color:var(--dark-blue);
+}
+
+.selected-label{
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.selected-class-row{
+    background:var(--white);
+    padding:14px;
+    margin-top:10px;
+    border-radius:6px;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.selected-class-row span{
+    color:var(--dark-gray);
+}
+
+.selected-class-row button{
+    width:fit-content;
+    margin-top:6px;
+    border:1px solid var(--bright-blue);
+    background:var(--white);
+    color:var(--dark-blue);
+    padding:7px 13px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.selected-class-row button:hover{
+    background:var(--bright-blue);
+    color:var(--white);
+}
+
+
+/* =========================================================
+   20. Forms
+========================================================= */
+
+.enrolment-form{
+    background:var(--white);
+    padding:34px;
+    border-radius:8px;
+    box-shadow:0 8px 28px rgba(0,0,0,.1);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    color:var(--dark-blue);
+    margin-bottom:8px;
+    font-weight:800;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #cfdde3;
+    border-radius:5px;
+    font-size:16px;
+    font-family:inherit;
+}
+
+.form-group textarea{
+    resize:vertical;
+}
+
+.form-error{
+    color:#c62828;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.enrol-button{
+    border:none;
+    background:var(--dark-blue);
+    color:var(--white);
+    padding:14px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:800;
+    font-size:16px;
+}
+
+.enrol-button:hover{
+    background:var(--bright-blue);
+}
+
+.email-note{
+    margin-top:12px;
+    color:var(--dark-gray);
+    font-size:14px;
+}
+
+
+/* =========================================================
+   21. Footer
+========================================================= */
+
+footer{
+    padding:36px 20px 24px;
+    color:var(--dark-blue);
+    text-align:center;
+    background-image:
+        linear-gradient(rgba(255,255,255,.93), rgba(255,255,255,.93)),
+        url("../images/footer-bg.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+.footer-logo{
+    width:150px;
+    margin-bottom:18px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:20px;
+}
+
+.footer-links a{
+    color:var(--dark-blue);
+    font-weight:700;
+}
+
+.sponsor-logos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:22px;
+    margin-bottom:20px;
+}
+
+.sponsor-logos img{
+    max-width:75px;
+    max-height:50px;
+    object-fit:contain;
+}
+
+footer p{
+    margin-bottom:0;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   22. Tablet Layout
+========================================================= */
 
 @media only screen and (max-width:991px){
+
+    .navbar{
+        min-height:auto;
+        padding:18px 20px;
+    }
 
     .navbar-collapse{
         padding:18px 0;
@@ -603,21 +1343,54 @@ footer p{
         text-align:center;
     }
 
-    .about-content img{
+    .about-content img,
+    .about-image{
         margin-bottom:30px;
     }
 
     .contact-info{
         margin-bottom:40px;
     }
+
+    .schedule-filters{
+        grid-template-columns:1fr;
+    }
+
+    .enrolment-layout{
+        grid-template-columns:1fr;
+    }
 }
 
-/* Mobile */
+
+/* =========================================================
+   23. Mobile Layout
+========================================================= */
 
 @media only screen and (max-width:767px){
 
-    .site-logo{
+    .navbar{
+        flex-direction:column;
+        gap:16px;
+        padding:18px 15px;
+    }
+
+    img.site-logo,
+    .site-logo img{
         width:115px;
+    }
+
+    .site-logo{
+        font-size:24px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:14px;
+    }
+
+    .nav-links a{
+        font-size:14px;
     }
 
     .hero{
@@ -647,15 +1420,15 @@ footer p{
     }
 
     .intro{
-        padding:30px 15px 10px;
+        padding:35px 15px 15px;
     }
 
     .intro h2{
-        font-size:32px;
+        font-size:34px;
     }
 
     .programs{
-        padding:20px 0 30px;
+        padding:20px 0 35px;
     }
 
     .program-card-image{
@@ -663,7 +1436,21 @@ footer p{
     }
 
     .teaching-section{
-        padding:40px 0;
+        min-height:auto;
+    }
+
+    .teaching-overlay{
+        padding:45px 0;
+    }
+
+    .teaching-content,
+    .teaching-box{
+        padding:28px 22px;
+    }
+
+    .teaching-content h2,
+    .teaching-box h2{
+        font-size:34px;
     }
 
     .locations-section{
@@ -724,232 +1511,19 @@ footer p{
         padding:24px 20px;
     }
 
-    .footer-links{
-        gap:18px;
+    .program-page-hero,
+    .timetable-hero{
+        min-height:300px;
+        padding:75px 15px;
     }
 
-    .sponsor-logos img{
-        max-width:65px;
-    }
-}
-
-
-/* HANDS ON TEACHING */
-
-.teaching-section{
-    background:url("../images/home-hands-on-teaching.jpeg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    min-height:650px;
-    display:flex;
-    align-items:center;
-}
-
-.teaching-overlay{
-    width:100%;
-    padding:80px 0;
-}
-
-.teaching-content{
-    max-width:500px;
-    padding:40px;
-}
-
-.teaching-content h2{
-    font-size:48px;
-    font-weight:700;
-    color:var(--dark-blue);
-    margin-bottom:20px;
-}
-
-.teaching-content h3{
-    font-size:28px;
-    font-weight:700;
-    color:var(--dark-blue);
-    margin-top:25px;
-    margin-bottom:15px;
-}
-
-.teaching-content p{
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:15px;
-}
-
-.teaching-content ul{
-    padding-left:20px;
-    margin-bottom:25px;
-}
-
-.teaching-content li{
-    margin-bottom:10px;
-}
-
-/* ABOUT PAGE */
-
-.about-hero{
-    background:url("../images/about-us-hero.jpeg");
-    background-size:cover;
-    background-position:center;
-    color:white;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.about-hero h1{
-    font-size:56px;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.about-hero p{
-    font-size:20px;
-}
-
-.about-content{
-    padding:60px 0;
-}
-
-.about-content h2{
-    color:var(--dark-blue);
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.about-content p{
-    font-size:18px;
-    line-height:1.8;
-}
-
-.about-image{
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.about-stats{
-    background:#eef7fa;
-    padding:60px 0;
-    text-align:center;
-}
-
-.about-stats h2{
-    color:var(--dark-blue);
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:40px;
-}
-
-.stat-box{
-    background:white;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.stat-box h3{
-    color:var(--bright-blue);
-    font-size:48px;
-    font-weight:700;
-}
-
-.stat-box p{
-    margin-top:10px;
-    font-size:18px;
-}
-
-/* Program detail pages */
-
-.program-page-hero{
-    min-height:350px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:90px 20px;
-    color:var(--white);
-    text-align:center;
-    background-size:cover;
-    background-position:center;
-}
-
-.program-page-hero h1{
-    font-size:54px;
-    font-weight:700;
-    text-shadow:0 2px 5px rgba(0,0,0,.4);
-}
-
-.swim-lessons-hero{
-    background-image:
-        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
-        url("../images/summer-swim-camps.jpeg");
-}
-
-.swim-programs-hero{
-    background-image:
-        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
-        url("../images/which-lesson-is-best.jpeg");
-}
-
-.adult-programs-hero{
-    background-image:
-        linear-gradient(rgba(26,46,56,.25), rgba(26,46,56,.25)),
-        url("../images/lap-swimming.jpeg");
-}
-
-.program-info-section{
-    padding:55px 0;
-}
-
-.program-info-section h2{
-    margin-bottom:35px;
-    color:var(--dark-blue);
-    text-align:center;
-    font-size:38px;
-    font-weight:700;
-}
-
-.program-info-section h3{
-    margin-bottom:12px;
-    color:var(--dark-gray);
-    font-family:Arial, sans-serif;
-    font-size:18px;
-    font-weight:700;
-}
-
-.program-info-section p{
-    font-size:16px;
-    line-height:1.8;
-}
-
-.program-text-block{
-    max-width:900px;
-    margin:0 auto 34px;
-}
-
-.program-location-list{
-    padding-left:0;
-    list-style:none;
-}
-
-.program-location-list li{
-    margin-bottom:10px;
-}
-
-.program-location-list a{
-    color:var(--bright-blue);
-    text-decoration:underline;
-}
-
-@media only screen and (max-width:767px){
-
-    .program-page-hero{
-        min-height:280px;
-        padding:70px 15px;
+    .program-page-hero h1,
+    .timetable-hero h1{
+        font-size:40px;
     }
 
-    .program-page-hero h1{
-        font-size:38px;
+    .timetable-hero p{
+        font-size:17px;
     }
 
     .program-info-section{
@@ -959,23 +1533,49 @@ footer p{
     .program-info-section h2{
         font-size:32px;
     }
-}
 
-.locations-map-link{
-    display:block;
-    max-width:100%;
-}
+    .schedule-section,
+    .enrolment-section{
+        padding:45px 15px;
+    }
 
-.locations-map{
-    display:block;
-    width:100%;
-    max-width:620px;
-    height:auto;
-    margin:0 auto;
-    transition:transform .3s;
-    cursor:pointer;
-}
+    .schedule-heading h2,
+    .enrolment-copy h2{
+        font-size:34px;
+    }
 
-.locations-map-link:hover .locations-map{
-    transform:scale(1.02);
+    .class-legend{
+        justify-content:flex-start;
+    }
+
+    .results-bar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .filter-buttons{
+        flex-direction:column;
+    }
+
+    .filter-button{
+        width:100%;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .enrolment-form{
+        padding:24px 20px;
+    }
+
+    .footer-links{
+        gap:16px;
+    }
+
+    .sponsor-logos img{
+        max-width:65px;
+    }
 }
